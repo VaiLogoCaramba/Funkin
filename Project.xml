@@ -22,13 +22,15 @@
 	<!--Desktop-specific-->
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false" />
+	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false" />
 	<!-- _____________________________ Path Settings ____________________________ -->
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
 	<classpath name="source" />
+	<assets path="assets/preload" rename="assets" exclude="*.ogg|*.wav" if="web" />
+	<assets path="assets/preload" rename="assets" exclude="*.mp3|*.wav" unless="web" />
 	<define name="PRELOAD_ALL" unless="web" />
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL" />
 	<section if="PRELOAD_ALL">
@@ -121,7 +123,7 @@
 	<haxelib name="flixel-text-input" /> <!-- Improved text field rendering for HaxeUI -->
 	<haxelib name="polymod" /> <!-- Modding framework -->
 	<haxelib name="flxanimate" /> <!-- Texture atlas rendering -->
-	<haxelib name="hxCodec" if="desktop" unless="hl" /> <!-- Video playback -->
+	<haxelib name="hxCodec" if="desktop || mobile" unless="hl" /> <!-- Video playback -->
 	<haxelib name="funkin.vis"/>
 
 
@@ -150,7 +152,7 @@
 	<!-- Disable trace() calls in release builds to bump up performance.
 		<haxeflag name="- -no-traces" unless="debug" />-->
 	<!-- HScript relies heavily on Reflection, which means we can't use DCE. -->
-	<haxeflag name="-dce no" />
+	<!-- <haxeflag name="-dce no" /> -->
 	<!-- Ensure all Funkin' classes are available at runtime. -->
 	<haxeflag name="--macro" value="include('funkin')" />
 	<!-- Ensure all UI components are available at runtime. -->
@@ -198,7 +200,7 @@
 		<!-- Difficulty, only used for week or song, defaults to 1 -->
 		<!-- <haxedef name="dif" value="2" if="debug"/> -->
 	</section>
-	<section if="newgrounds">
+	<section if="newgrounds" >
 		<!-- Enables Ng.core.verbose -->
 		<!-- <haxedef name="NG_VERBOSE" /> -->
 		<!-- Enables a NG debug session, so medals don't permently unlock -->
