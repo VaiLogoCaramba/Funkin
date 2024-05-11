@@ -28,23 +28,8 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
-	<classpath name="source" />
-	<define name="PRELOAD_ALL" unless="web" />
+	<classpath name="source" >
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL" />
-	<section if="PRELOAD_ALL">
-		<library name="songs" preload="true" />
-		<library name="shared" preload="true" />
-		<library name="tutorial" preload="true" />
-		<library name="week1" preload="true" />
-		<library name="week2" preload="true" />
-		<library name="week3" preload="true" />
-		<library name="week4" preload="true" />
-		<library name="week5" preload="true" />
-		<library name="week6" preload="true" />
-		<library name="week7" preload="true" />
-		<library name="weekend1" preload="true" />
-		<library name="videos" preload="true" />
-	</section>
 	<section if="NO_PRELOAD_ALL">
 		<library name="songs" preload="false" />
 		<library name="shared" preload="false" />
@@ -59,31 +44,6 @@
 		<library name="weekend1" preload="false" />
 		<library name="videos" preload="false" />
 	</section>
-	<library name="art" preload="false" />
-	<assets path="assets/songs" library="songs" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/songs" library="songs" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<!-- Videos go in their own library because web never needs to preload them, they can just be streamed. -->
-	<assets path="assets/videos" library="videos" />
-	<assets path="assets/shared" library="shared" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/shared" library="shared" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/tutorial" library="tutorial" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/tutorial" library="tutorial" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week1" library="week1" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week1" library="week1" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week2" library="week2" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week2" library="week2" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week3" library="week3" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week3" library="week3" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week4" library="week4" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week4" library="week4" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week5" library="week5" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week5" library="week5" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week6" library="week6" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week6" library="week6" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/week7" library="week7" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/week7" library="week7" exclude="*.fla|*.mp3|*.wav" unless="web" />
-	<assets path="assets/weekend1" library="weekend1" exclude="*.fla|*.ogg|*.wav" if="web" />
-	<assets path="assets/weekend1" library="weekend1" exclude="*.fla|*.mp3|*.wav" unless="web" />
 	<!-- <assets path='example_mods' rename='mods' embed='false'/> -->
 	<!--
 		AUTOMATICALLY MOVING EXAMPLE MODS INTO THE BUILD CAUSES ISSUES
