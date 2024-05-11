@@ -28,8 +28,7 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
-	<classpath name="source" >
-	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL" />
+	<classpath name="source">
 	<section if="NO_PRELOAD_ALL">
 		<library name="songs" preload="false" />
 		<library name="shared" preload="false" />
@@ -158,7 +157,7 @@
 		<!-- Difficulty, only used for week or song, defaults to 1 -->
 		<!-- <haxedef name="dif" value="2" if="debug"/> -->
 	</section>
-	<section if="newgrounds" >
+	<section if="newgrounds">
 		<!-- Enables Ng.core.verbose -->
 		<!-- <haxedef name="NG_VERBOSE" /> -->
 		<!-- Enables a NG debug session, so medals don't permently unlock -->
