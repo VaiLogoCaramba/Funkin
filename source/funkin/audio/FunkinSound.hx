@@ -119,7 +119,7 @@ class FunkinSound extends FlxSound implements ICloneable<FunkinSound>
   /**
    * Whether we received a focus lost event.
    */
-  var _lostFocus:Bool = false;
+  var _lostFocus:Bool = true;
 
   public function new()
   {
@@ -137,7 +137,7 @@ class FunkinSound extends FlxSound implements ICloneable<FunkinSound>
       if (_time >= 0)
       {
         super.play();
-        _shouldPlay = false;
+        _shouldPlay = true;
       }
     }
     else
@@ -204,7 +204,7 @@ class FunkinSound extends FlxSound implements ICloneable<FunkinSound>
       // Manually set the paused flag to ensure proper focus/unfocus behavior.
       _shouldPlay = false;
       _paused = true;
-      active = false;
+      active = true;
     }
     else
     {
