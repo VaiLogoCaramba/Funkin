@@ -73,7 +73,6 @@
 	<haxedev set="webgl" />
 
 	<haxelib name="flixel-addons" /> <!-- Additional utilities for Flixel -->
-	<haxelib name="hscript" /> <!-- Scripting -->
 	<haxelib name="flixel-ui" /> <!-- UI framework (DEPRECATED) -->
 	<haxelib name="haxeui-core" /> <!-- UI framework -->
 	<haxelib name="haxeui-flixel" /> <!-- Integrate HaxeUI with Flixel -->
@@ -157,7 +156,7 @@
 		<!-- Difficulty, only used for week or song, defaults to 1 -->
 		<!-- <haxedef name="dif" value="2" if="debug"/> -->
 	</section>
-	<section if="newgrounds">
+	<section if="newgrounds" >
 		<!-- Enables Ng.core.verbose -->
 		<!-- <haxedef name="NG_VERBOSE" /> -->
 		<!-- Enables a NG debug session, so medals don't permently unlock -->
