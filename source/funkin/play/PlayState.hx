@@ -960,7 +960,7 @@ class PlayState extends MusicBeatSubState
           // boyfriendPos.put(); // TODO: Why is this here?
         }
 
-        #if discord_rpc
+        #if desktop
         DiscordClient.changePresence(detailsPausedText, currentSong.song + ' (' + storyDifficultyText + ')', iconRPC);
         #end
       }
